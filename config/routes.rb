@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
     resources :posts
     resources :comments, only: []
-    resources :forums, only: []
+    resources :forums, only: [:index, :show, :create]
     resources :users, only: []
     
     get "/sessions", to: "sessions#index"
