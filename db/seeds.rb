@@ -27,8 +27,8 @@ end
 10.times do
         Post.create(
         title: Faker::TvShows::Community.quotes,
-        user_id: User.all.sample,
-        forum_id: Forum.all.sample
+        user: User.all.sample,
+        forum: Forum.all.sample
     )
 end
 
