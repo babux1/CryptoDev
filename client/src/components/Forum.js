@@ -5,7 +5,7 @@ import ForumSearch from "./ForumSearch";
 function Forum() {
   return (
     <div className="forum">
-      Forum component
+      <h2>Solidity Forum</h2>
       <ForumSearch />
       <Post />
       <Post />
