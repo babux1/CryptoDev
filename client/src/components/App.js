@@ -13,9 +13,9 @@ function App() {
       <div className="left-column">
         <Forum />
       </div>
-      <div className="right-column">
+      {/* <div className="right-column">
         <ForumsList />
-      </div>
+      </div> */}
     </div>
   );
 }

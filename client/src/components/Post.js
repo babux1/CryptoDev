@@ -1,10 +1,10 @@
 import React from "react";
 import Comment from "./Comment";
 
-function Thread() {
+function Post() {
   return (
-    <div className="thread">
-      <h2>Thread Title Here</h2>
+    <div className="Post">
+      <h2>Post Title Here</h2>
       <Comment />
       <Comment />
       <Comment />
@@ -12,4 +12,4 @@ function Thread() {
   );
 }
 
-export default Thread;
+export default Post;

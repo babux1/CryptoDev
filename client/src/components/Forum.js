@@ -1,5 +1,5 @@
 import React from "react";
-import Thread from "./Thread";
+import Post from "./Post";
 import ForumSearch from "./ForumSearch";
 
 function Forum() {
@@ -7,9 +7,9 @@ function Forum() {
     <div className="forum">
       Forum component
       <ForumSearch />
-      <Thread />
-      <Thread />
-      <Thread />
+      <Post />
+      <Post />
+      <Post />
     </div>
   );
 }

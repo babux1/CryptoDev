@@ -10,10 +10,12 @@ h2 {
 }
 
 .app {
-  /* display: flex;
-  flex-direction: row; */
+  display: flex;
+  align-content: center;
+  flex-direction: row;
   justify-content: center;
   width: 100%;
+  margin: auto;
   border: 1px solid black;
 }
 
@@ -22,15 +24,15 @@ h2 {
 }
 
 .left-column {
-  /* display: flex; */
   display: block;
-  float: left;
-  width: 65%;
+
+  /* float: left; */
+  margin: auto;
+  width: 80%;
   border: solid black 1px;
 }
 
 .right-column {
-  /* display: flex; */
   display: block;
   float: right;
   width: 25%;
@@ -43,7 +45,7 @@ h2 {
   width: 100%;
 }
 
-.thread {
+.post {
   border: solid green 1px;
   width: 90%;
   /* margin: auto; */
