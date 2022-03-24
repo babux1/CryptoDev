@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :thread_rs, only: []
   resources :comments, only: []
   resources :forums, only: []
-  resources :users, only: []
+  resources :users, only: [:show, :create, :update]
   
 
 end
