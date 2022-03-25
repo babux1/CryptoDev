@@ -7,6 +7,7 @@ function Forum() {
     <div className="forum">
       <h2>Solidity Forum</h2>
       <ForumSearch />
+
       <Post />
       <Post />
       <Post />
