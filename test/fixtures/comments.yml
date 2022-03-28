@@ -3,9 +3,9 @@
 one:
   content: MyString
   user: one
-  forum: one
+  post: one
 
 two:
   content: MyString
   user: two
-  forum: two
+  post: two

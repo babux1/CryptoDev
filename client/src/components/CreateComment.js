@@ -4,7 +4,7 @@ function CreateComment() {
   const [comment, setComment] = useState("");
 
   return (
-    <div>
+    <div className="create-comment">
       <form>
         <input
           type="text"

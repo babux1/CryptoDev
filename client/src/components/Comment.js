@@ -1,9 +1,11 @@
 import React from "react";
 
-function Comment() {
+function Comment({ content, user, date }) {
   return (
     <div className="comment">
-      <p>user comment here</p>
+      <p>{content}</p>
+      <p className="post-stats">Posted by: {user}</p>
+      <p className="post-stats">{date}</p>
     </div>
   );
 }
