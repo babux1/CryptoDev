@@ -7,8 +7,9 @@ function LoginPage() {
     return (
         <div>
             <form>
-                <input type = "text"></input>
-                <input type = "text"></input>
+                <input type = "text" placeholder = "username"></input>
+                <input type = "text" placeholder = "password"></input><br></br>
+                <button>Enter</button>
             </form>
         </div>
     )

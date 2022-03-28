@@ -7,9 +7,10 @@ function Login() {
   return (
     <Link to="/loginpage">
      <button type="button">
-          Login here!
+          Login
      </button>
     </Link>
+    
   )
   
 }
