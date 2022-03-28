@@ -52,7 +52,7 @@ function App() {
 
       <div>
       <Routes>
-      <Route path = "loginpage" element = {<LoginPage />}/>
+      <Route exact path = "loginpage" element = {<LoginPage />}/>
       </Routes>
       </div>
       {/* <div className="right-column">
