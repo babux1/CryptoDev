@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Post from "./Post";
 import ForumSearch from "./ForumSearch";
 import PostTitle from "./PostPreview";
 import { v4 as uuidv4 } from "uuid";
+import PostPreview from "./PostPreview";
 
 function Forum() {
   const [posts, setPosts] = useState([]);
+  const [postID, setPostID] = useState();
 
   useEffect(() => {
     fetch("/postpreviews")
@@ -28,13 +31,15 @@ function Forum() {
 
   const displayPosts = posts.map((post) => {
     return (
-      <PostTitle
+      <PostPreview
         key={uuidv4()}
+        id={post.id}
         title={post.title}
         content={post.content.slice(0, 100) + "..."}
         poster={post.poster}
         date={(date = Date(post.created_at))}
         comments={post.comments}
+        setPostID={setPostID}
       />
     );
   });

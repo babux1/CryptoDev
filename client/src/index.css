@@ -5,8 +5,14 @@ body {
   background-color: rgb(248, 248, 248);
 }
 
+header {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+    sans-serif;
+}
+
 h1,
-h2 {
+h2,
+h3 {
   text-align: center;
 }
 
@@ -54,7 +60,7 @@ h2 {
 
 /* Change the color of links on hover */
 .nav a:hover {
-  background-color: #ddd;
+  background-color: #ffecd1;
   color: black;
 }
 
@@ -79,13 +85,41 @@ h2 {
 }
 
 .forum {
-  padding: 0.5em;
+  padding: 0.5em 0.5em 3em 0.5em;
   width: 100%;
   background-color: #ffecd1;
-  border: solid black 1px;
+  border: 6px double black;
+  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
+  margin-top: 2em;
 }
 
-.post {
+.forum-post-preview {
+  width: auto;
+  /* margin: auto; */
+  background-color: white;
+  margin: 2em 2em 0em 2em;
+  padding: 0.05em 0.5em 0.05em 0.5em;
+  border: 6px double black;
+  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
+  border-radius: 0px;
+}
+
+.forum-post-preview h2 {
+  text-align: left;
+}
+
+.content-preview {
+  font-style: italic;
+  font-size: small;
+  color: rgb(107, 107, 107);
+}
+
+.post-stats {
+  font-size: small;
+  color: rgb(107, 107, 107);
+}
+
+/* .post {
   width: 90%;
   margin: 1em auto 0 auto;
   margin-top: 1em;
@@ -93,10 +127,17 @@ h2 {
   background-color: white;
   border: solid lightgray 1px;
   border-radius: 5px;
-}
+} */
 
 .comment {
-  text-align: justify;
+  width: auto;
+  /* margin: auto; */
+  background-color: white;
+  margin: 2em 2em 0em 2em;
+  padding: 0.05em 0.5em 0.05em 0.5em;
+  border: 6px double black;
+  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
+  border-radius: 0px;
 }
 
 input {
