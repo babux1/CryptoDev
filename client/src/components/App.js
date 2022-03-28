@@ -1,22 +1,29 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import {Link} from "react-router-dom";
 import Login from "./Login";
 import LoginPage from "./LoginPage"
 import Forum from "./Forum";
+import Post from "./Post";
 import ForumsList from "./ForumsList";
 
 function App() {
   return (
     <div className="App">
+      <header>
+        <h1>CryptoDev Forum</h1>
+        <Login />
+      </header>
       <Nav />
-      <Login />
-      <h1>CryptoDev Forum</h1>
+
       <div className="left-column">
-        <Forum />
+        <Routes>
+          <Route path="/" element={<Forum />}></Route>
+          <Route path="posts/:id" element={<Post />} />
+        </Routes>
       </div>
-      <div>
+
       <div>
       <Routes>
       <Route path = "loginpage" element = {<LoginPage />}/>
@@ -26,6 +33,7 @@ function App() {
       {/* <div className="right-column">
         <ForumsList />
       </div> */}
+
     </div>
   );
 }
