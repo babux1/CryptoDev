@@ -5,12 +5,18 @@ import {Link} from "react-router-dom";
 function Login() {
 
   return (
-    <Link to="/loginpage">
-     <button type="button">
-          Login
-     </button>
-    </Link>
-    
+    <div>
+      <Link to="/loginpage">
+      <button type="button">
+            Logout
+      </button>
+      </Link>
+      <Link to="/">
+      <button type="button">
+            Login
+      </button>
+      </Link>
+    </div>
   )
   
 }
