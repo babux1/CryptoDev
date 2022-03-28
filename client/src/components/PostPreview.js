@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes, Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function PostPreview({
@@ -9,29 +9,28 @@ function PostPreview({
   date,
   comments,
   id,
-  setPostID,
-  handlePostClick,
+  // setPostID,
+  setSelectedPost,
 }) {
   function handlePostClick(e) {
     console.log(e.target);
-    setPostID(id);
+    // setPostID(id);
     // open post page
+    // fetch(`/posts/${id}`)
+    // .then((resp) => resp.json())
+    // .then((post) => {
+    // console.log(post);
+    // setSelectedPost(post);
+    // });
   }
   // const params = useParams();
   // console.log(params);
 
   return (
     <div className="forum-post-preview">
-      {/* <NavLink to="/posts/:id"> */}
-
-      {/* <Routes> */}
-      {/* <Route path="/posts/:id"> */}
-      <h2 onClick={handlePostClick}>{title}</h2>
-      {/* </Route> */}
-      {/* </Routes> */}
-
-      {/* </NavLink> */}
-
+      <Link to={`/posts/${id}`}>
+        <h2 onClick={handlePostClick}>{title}</h2>
+      </Link>
       <p className="content-preview">{content}</p>
       <hr />
       <p className="post-stats">

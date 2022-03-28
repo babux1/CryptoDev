@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
 import Login from "./Login";
 import Forum from "./Forum";
+import Post from "./Post";
 import ForumsList from "./ForumsList";
 
 function App() {
@@ -16,12 +17,10 @@ function App() {
 
       <div className="left-column">
         <Routes>
-          <Route path="/" element={<Forum />} />
+          <Route path="/" element={<Forum />}></Route>
+          <Route path="posts/:id" element={<Post />} />
         </Routes>
       </div>
-      {/* <div className="right-column">
-        <ForumsList />
-      </div> */}
     </div>
   );
 }

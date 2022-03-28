@@ -1,25 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 import CreateComment from "./CreateComment";
 
-function Post({ id }) {
+function Post({ id, title, content }) {
+  const [post, setPost] = useState([]);
   const params = useParams();
 
-  function onRender() {
-    fetch(`/posts/${id}`)
-      .then((resp) => resp.json())
-      .then((comment) => {
-        console.log(comment);
+  console.log(params);
+
+  useEffect(() => {
+    fetch(`/posts/${params.id}`)
+      .then((r) => r.json())
+      .then((posts) => {
+        console.log(posts);
+        setPost(posts);
       });
-  }
-  console.log(id);
+  }, []);
+
   return (
     <div className="forum-post-preview">
-      <h2>Post Title Here</h2>
-      <Comment />
-      <Comment />
-      <Comment />
+      {/* {onRender()} */}
+      <h2>{post.title}</h2>
+      <p>{post.content}</p>
       <CreateComment />
     </div>
   );

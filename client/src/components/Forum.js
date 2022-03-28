@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Post from "./Post";
 import ForumSearch from "./ForumSearch";
 import PostTitle from "./PostPreview";
@@ -8,7 +8,8 @@ import PostPreview from "./PostPreview";
 
 function Forum() {
   const [posts, setPosts] = useState([]);
-  const [postID, setPostID] = useState();
+  // const [postID, setPostID] = useState();
+  const [selectedPost, setSelectedPost] = useState([]);
 
   useEffect(() => {
     fetch("/postpreviews")
@@ -39,7 +40,8 @@ function Forum() {
         poster={post.poster}
         date={(date = Date(post.created_at))}
         comments={post.comments}
-        setPostID={setPostID}
+        // setPostID={setPostID}
+        setSelectedPost={setSelectedPost}
       />
     );
   });
