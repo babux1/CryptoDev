@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+    before_action :authorize
+    skip_before_action :authorize, only: [:postpreviews]
+
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
     
@@ -27,6 +30,7 @@ class PostsController < ApplicationController
         end
     
         def update 
+            return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
             post = Post.find(params[:id])
             post.update(params_update)
             render json: post

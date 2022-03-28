@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :authorize
+
     rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
 

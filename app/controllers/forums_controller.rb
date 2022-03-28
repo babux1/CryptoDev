@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    before_action :authorize
     rescue_from ActiveRecord::RecordNotFound, with: :destroy_invalid
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
     
