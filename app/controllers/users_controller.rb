@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
     
         def show
-            user = User.find(params[:id])
+            user = User.find_by!(id:session[:user_id])
             render json: user
         end
     
@@ -22,7 +22,6 @@ class UsersController < ApplicationController
         def user_params
             params.permit(:username, :email, :password, :btc_address)
         end
-    
     
         def render_record_not_found
             render json: { error: "User not found" }, status: :not_found

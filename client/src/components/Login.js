@@ -6,12 +6,12 @@ function Login() {
 
   return (
     <div>
-      <Link to="/loginpage">
+      <Link to="loginpage">
       <button type="button">
             Logout
       </button>
       </Link>
-      <Link to="/">
+      <Link to="">
       <button type="button">
             Login
       </button>
