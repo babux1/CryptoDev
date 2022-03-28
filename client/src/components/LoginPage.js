@@ -6,11 +6,10 @@ function LoginPage() {
 
     return (
         <div>
-        Hi
-            {/* <form>
-                <input>username</input>
-                <input>password</input>
-            </form> */}
+            <form>
+                <input type = "text"></input>
+                <input type = "text"></input>
+            </form>
         </div>
     )
 }
