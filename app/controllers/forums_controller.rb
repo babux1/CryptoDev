@@ -1,24 +1,56 @@
-class ForumsController < ApplicationController
-rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+class CommentsController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :destroy_invalid
+    rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
     
-    def index 
-        forums = Forum.all
-        render json: forums
+        def index
+            comments = Comment.all
+            render json: comments
+        end
+    
+        def show
+            comment = Comment.find(params[:id])
+            render json: comment
+        end
+    
+        def create
+            comment = Comment.create!(params_create)
+            render json: comment
+        end
+    
+        # add validation
+    
+    
+        def destroy
+            comment = Comment.find(params{:id})
+            comment.destroy
+            head :no_content
+        end
+    
+    
+        def update
+            comment = Comment.find(params[:id])
+            comment.update(params_create)
+            render json: comment
+        end
+    
+    
+    
+        private
+    
+        def params_create
+            params.permit(:content)
+        end
+    
+        def destroy_invalid
+            render json: {error: "Comment not found"}, status: :not_found
+        end
+    
+        def render_not_found
+            render json: {errors: "comment not found"}, status: :not_found
+        end
+    
+        def render_invalid(invalid)
+            render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+        end
+    
     end
-
-    def show 
-        forum = Forum.find_by!(id:params[:id])
-        render json: forum
-    end
-
-    def create 
-        forum = Forum.create(title: params[:title], comments: params[:comments])
-        render json: forum, status: :created
-    end
-
-    private
-
-    def render_not_found
-        render json: {error: "Forum not found"}, status: :not_found
-    end
-end

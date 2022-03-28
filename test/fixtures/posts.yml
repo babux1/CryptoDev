@@ -2,10 +2,12 @@
 
 one:
   title: MyString
+  content: MyString
   forum: one
   user: one
 
 two:
   title: MyString
+  content: MyString
   forum: two
   user: two

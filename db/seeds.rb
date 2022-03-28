@@ -3,9 +3,10 @@ Post.destroy_all
 User.destroy_all
 Forum.destroy_all
 
+puts "seeding... 🪴🪴🪴"
 
 
-10.times do
+50.times do
     User.create(
         username: Faker::Twitter.screen_name, 
         password: Faker::Barcode.ean, 
@@ -16,25 +17,23 @@ Forum.destroy_all
 end
 
 
-10.times do
-    Forum.create(
-        title: Faker::ProgrammingLanguage.name,
-        comments: Faker::Quote.famous_last_words
-    )
-end
+Forum.create(title: "Solidity", description: "All things Solidity")
+Forum.create(title: "Ethereum", description: "Ethereum general discussion")
+Forum.create(title: "Bitcoin", description: "All things Bitcoin")
 
 
-10.times do
-        Post.create(
-        title: Faker::TvShows::Community.quotes,
+100.times do
+    Post.create(
+        title: Faker::Job.title,
+        content: Faker::Quote.matz,
         user: User.all.sample,
-        forum: Forum.all.sample
+        forum: Forum.first
     )
 end
 
-10.times do
+1000.times do
     Comment.create(
-        content: Faker::Marketing.buzzwords,
+        content: Faker::Quote.matz,
         user: User.all.sample,
         post: Post.all.sample
     )
