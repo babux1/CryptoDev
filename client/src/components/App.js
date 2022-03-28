@@ -29,7 +29,6 @@ function App() {
       <Route path = "loginpage" element = {<LoginPage />}/>
       </Routes>
       </div>
-      </div>
       {/* <div className="right-column">
         <ForumsList />
       </div> */}
