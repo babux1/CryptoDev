@@ -10,6 +10,8 @@ function Forum() {
   const [posts, setPosts] = useState([]);
   // const [postID, setPostID] = useState();
   const [selectedPost, setSelectedPost] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
 
   useEffect(() => {
     fetch("/postpreviews")
@@ -29,6 +31,10 @@ function Forum() {
     const minutes = date.getMinutes();
     return `${month}, ${day}, ${year}, ${hours}:${minutes}`;
   }
+  const displayedPosts = posts.filter((post) => {
+    return post.title.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
 
   const displayPosts = posts.map((post) => {
     return (
@@ -42,6 +48,7 @@ function Forum() {
         comments={post.comments}
         // setPostID={setPostID}
         setSelectedPost={setSelectedPost}
+        posts={displayedPosts}
       />
     );
   });
@@ -49,8 +56,9 @@ function Forum() {
   return (
     <div className="forum">
       <h2>Solidity Forum</h2>
-      <ForumSearch />
+      <ForumSearch searchTerm={searchTerm} onSearchChange={setSearchTerm}/>
       {displayPosts}
+      {/* {displayedPosts} */}
     </div>
   );
 }

@@ -29,6 +29,7 @@ function Post({ id, title, content }) {
     );
   });
 
+
   // post.comments.map((comment) => console.log(comment));
 
   return (

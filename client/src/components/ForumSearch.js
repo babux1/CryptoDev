@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 
-function ForumSearch() {
-  const [search, setSearch] = useState("");
+function ForumSearch({searchTerm, onSearchChange}) {
+  // const [search, setSearch] = useState("");
   return (
     <div className="search">
       <form>
-        <label>
-          Search the forum:{" "}
+        <label htmlFor="searchbox">Search the forum:{" "}</label>
           <input
             className="forum-search"
             type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            id="searchbox"
             placeholder="Enter search here..."
-          ></input>
-        </label>
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+          />
+          {/* <button type="submit">Search</button> */}
       </form>
     </div>
   );
