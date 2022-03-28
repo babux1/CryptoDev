@@ -10,10 +10,12 @@ import ForumsList from "./ForumsList";
 
 function App() {
 
+  const [logout, setLogout] = useState("")
+
   function handleLogout() {
         fetch("/logout", {
           method: "DELETE",
-        }).then(() => onLogout());
+        }).then(() => setLogout());
       }
     
   const [user, setUser] = useState(null)
