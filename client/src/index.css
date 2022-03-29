@@ -16,6 +16,20 @@ h3 {
   text-align: center;
 }
 
+input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+  height: 5em;
+  margin-bottom: 3em;
+  background-color: white;
+  margin: 2em 2em 0em 2em;
+  padding: 0.5em;
+  border: 6px double black;
+  border-radius: 0px;
+}
+
 .app {
   display: flex;
   align-content: center;
@@ -35,6 +49,14 @@ h3 {
   flex-direction: row;
   align-items: center;
   align-content: center;
+}
+
+.search-input {
+  display: block;
+  float: right;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
 }
 
 .nav {
@@ -93,6 +115,15 @@ h3 {
   margin-top: 2em;
 }
 
+.h2-bar {
+  width: auto;
+  background-color: white;
+  /* margin: 1em auto 1em auto; */
+  margin: 1em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border: 10px double black;
+}
+
 .forum-post-preview {
   width: auto;
   /* margin: auto; */
@@ -102,10 +133,6 @@ h3 {
   border: 6px double black;
   box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
   border-radius: 0px;
-}
-
-.forum-post-preview h2 {
-  text-align: left;
 }
 
 .content-preview {
@@ -119,15 +146,18 @@ h3 {
   color: rgb(107, 107, 107);
 }
 
-/* .post {
-  width: 90%;
-  margin: 1em auto 0 auto;
-  margin-top: 1em;
-  padding: 0.5em 1em 1em 1em;
-  background-color: white;
-  border: solid lightgray 1px;
-  border-radius: 5px;
-} */
+.post {
+  padding: 0.5em 0.5em 3em 0.5em;
+  width: 100%;
+  background-color: #ffecd1;
+  border: 6px double black;
+  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
+  margin-top: 2em;
+}
+
+.create-comment {
+  padding: 0.5em;
+}
 
 .comment {
   width: auto;
@@ -140,24 +170,27 @@ h3 {
   border-radius: 0px;
 }
 
-input {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 60%;
+.comment-input {
   height: 5em;
-  margin-bottom: 3em;
-  background-color: white;
-  margin: 2em 2em 0em 2em;
-  padding: 0.5em;
-  border: 6px double black;
-  /* box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%); */
-  border-radius: 0px;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0em;
+  font-size: large;
+  word-wrap: break-word;
 }
 
-.forum-search {
-  display: block;
-  float: right;
-  width: 25%;
+.button {
+  background-color: green;
+  color: white;
+  width: auto;
   border-radius: 10px;
+  border: solid darkgreen 1px;
+  padding: 1em;
+  height: auto;
+  /* box-shadow: 0 0 0 3px darkgreen, 0.5em 0.5em 3px 0 rgb(0 0 0 / 50%); */
+}
+
+.button:hover {
+  cursor: pointer;
 }

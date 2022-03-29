@@ -6,10 +6,16 @@ import PostTitle from "./PostPreview";
 import { v4 as uuidv4 } from "uuid";
 import PostPreview from "./PostPreview";
 
-function Forum() {
+function Forum({ search, filteredReults }) {
   const [posts, setPosts] = useState([]);
-  // const [postID, setPostID] = useState();
   const [selectedPost, setSelectedPost] = useState([]);
+
+  // console.log(filteredReults);
+
+  let searchTerms;
+  {
+    search === "" ? (searchTerms = posts) : (searchTerms = filteredReults);
+  }
 
   useEffect(() => {
     fetch("/postpreviews")
@@ -20,17 +26,7 @@ function Forum() {
       });
   }, []);
 
-  function date(timestamp) {
-    const date = new Date(timestamp);
-    const day = date.getDay();
-    const month = date.getUTCMonth();
-    const year = date.getFullYear();
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    return `${month}, ${day}, ${year}, ${hours}:${minutes}`;
-  }
-
-  const displayPosts = posts.map((post) => {
+  const displayPosts = searchTerms.map((post) => {
     return (
       <PostPreview
         key={uuidv4()}
@@ -46,13 +42,17 @@ function Forum() {
     );
   });
 
-  return (
-    <div className="forum">
-      <h2>Solidity Forum</h2>
-      <ForumSearch />
-      {displayPosts}
-    </div>
-  );
+  function date(timestamp) {
+    const date = new Date(timestamp);
+    const day = date.getDay();
+    const month = date.getUTCMonth();
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    return `${month}, ${day}, ${year}, ${hours}:${minutes}`;
+  }
+
+  return <div className="forum">{displayPosts}</div>;
 }
 
 export default Forum;
