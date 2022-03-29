@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :password_digest
       t.string :btc_address
       t.boolean :admin
+      t.string :avatar_url
 
       t.timestamps
     end

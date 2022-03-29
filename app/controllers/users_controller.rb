@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         private
 
         def user_params
-            params.permit(:username, :email, :password, :btc_address)
+            params.permit(:username, :email, :password, :btc_address,  :avatar_url)
         end
 
 
