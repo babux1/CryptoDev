@@ -31,6 +31,17 @@ class PostsController < ApplicationController
             post.update(params_update)
             render json: post
         end
+
+        def search
+            # debugger
+            posts = Post.all
+            filtered = posts.filter do |post| 
+                post.content.downcase.include?(params[:search].downcase) ||
+                post.title.downcase.include?(params[:search].downcase) ||
+                post.comments.include?(params[:search])
+            end
+            render json: filtered
+        end
     
         # custom, non RESTfull routes
         def postpreviews
@@ -40,11 +51,6 @@ class PostsController < ApplicationController
             end 
             render json: posts
         end
-
-        def postcomments
-
-        end
-
 
         private 
         

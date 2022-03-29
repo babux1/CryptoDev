@@ -16,8 +16,7 @@ class CommentsController < ApplicationController
             comment = Comment.create!(params_create)
             render json: comment
         end
-    
-        # add validation
+
     
     
         def destroy
@@ -38,7 +37,7 @@ class CommentsController < ApplicationController
         private
     
         def params_create
-            params.permit(:content)
+            params.permit(:content, :user_id, :post_id)
         end
     
         def destroy_invalid

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # delete "/logout" to: "sessions#destroy
 
   get '/postpreviews', to: "posts#postpreviews"
+  get '/search', to: "posts#search"
   
 end
 
