@@ -1,19 +1,25 @@
 body {
   margin: 0;
+  margin-bottom: 5em;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: BentonSans, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
   background-color: rgb(248, 248, 248);
 }
 
 header {
   font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
     sans-serif;
+  color: white;
 }
 
 h1,
 h2,
 h3 {
+  font-family: "Quicksand", sans-serif;
   text-align: center;
+  font-weight: bold;
 }
 
 input {
@@ -26,8 +32,25 @@ input {
   background-color: white;
   margin: 2em 2em 0em 2em;
   padding: 0.5em;
-  border: 6px double black;
+  /* border: 6px double black; */
   border-radius: 0px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
 }
 
 .app {
@@ -40,8 +63,48 @@ input {
   border: 1px solid black;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: #7699d4;
+}
+
+.header-1-c {
+  display: flex;
+  width: 33%;
+  padding-left: 0.5em;
+  /* border: solid black 1px; */
+}
+.header-2-c {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 33%;
+}
+.header-3-c {
+  display: flex;
+  float: right;
+  width: 33%;
+}
+
 .login {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  float: right;
+  margin: auto;
+}
+
+.login-btn {
+  padding: 0.5em 1em 0.5em 1em;
+  margin-left: 1em;
+  background-color: rgb(236, 236, 236);
+  color: black;
+  width: auto;
+  border-radius: 5px;
+  /* border: solid darkgray 2px; */
+  padding: auto;
+  height: auto;
+  /* box-shadow: 0 0 0 1px darkgray, 0.2em 0.2em 1px 0 #47035523; */
 }
 
 .search {
@@ -49,12 +112,12 @@ input {
   flex-direction: row;
   align-items: center;
   align-content: center;
+  width: auto;
+  margin: auto;
 }
 
 .search-input {
-  display: block;
-  float: right;
-  width: auto;
+  width: 100%;
   height: auto;
   border-radius: 5px;
 }
@@ -63,8 +126,8 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #ffce8a;
-  color: black;
+  background-color: #9448bc;
+  color: white;
   overflow: hidden;
   font-size: 16px;
   border-top: 1px solid black;
@@ -75,27 +138,27 @@ input {
 .nav a {
   float: left;
   display: block;
-  color: black;
+  color: white;
   padding: 14px 18px;
   text-decoration: none;
 }
 
 /* Change the color of links on hover */
 .nav a:hover {
-  background-color: #ffecd1;
+  background-color: #90fcf9;
   color: black;
 }
 
 /* Add a color to the active/current link */
 .nav a.active {
   background-color: white;
-  color: black;
+  color: white;
 }
 
 .left-column {
   display: block;
   margin: auto;
-  width: 80%;
+  width: 90%;
 }
 
 .right-column {
@@ -106,13 +169,15 @@ input {
   float: none;
 }
 
-.forum {
+.forum,
+.post {
   padding: 0.5em 0.5em 3em 0.5em;
   width: 100%;
-  background-color: #ffecd1;
-  border: 6px double black;
-  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
+  background-color: #90fcf9;
+  border: 1px solid #480355;
+  box-shadow: 0 0 0 3px #7699d4, 1em 1em 3px 0 rgba(0, 0, 0, 0.247);
   margin-top: 2em;
+  border-radius: 10px;
 }
 
 .h2-bar {
@@ -121,7 +186,8 @@ input {
   /* margin: 1em auto 1em auto; */
   margin: 1em;
   padding: 0.5em 0.5em 0.5em 0.5em;
-  border: 10px double black;
+  border: 2px solid #7699d4;
+  border-radius: 10px;
 }
 
 .forum-post-preview {
@@ -129,30 +195,19 @@ input {
   /* margin: auto; */
   background-color: white;
   margin: 2em 2em 0em 2em;
-  padding: 0.05em 0.5em 0.05em 0.5em;
-  border: 6px double black;
-  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
-  border-radius: 0px;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+  border: 1px solid #7699d4;
+  /* box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%); */
+  border-radius: 15px;
 }
 
 .content-preview {
-  font-style: italic;
-  font-size: small;
   color: rgb(107, 107, 107);
 }
 
 .post-stats {
   font-size: small;
   color: rgb(107, 107, 107);
-}
-
-.post {
-  padding: 0.5em 0.5em 3em 0.5em;
-  width: 100%;
-  background-color: #ffecd1;
-  border: 6px double black;
-  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
-  margin-top: 2em;
 }
 
 .create-comment {
@@ -164,10 +219,9 @@ input {
   /* margin: auto; */
   background-color: white;
   margin: 2em 2em 0em 2em;
-  padding: 0.05em 0.5em 0.05em 0.5em;
-  border: 6px double black;
-  box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%);
-  border-radius: 0px;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+  border: 1px solid #7699d4;
+  border-radius: 10px;
 }
 
 .comment-input {
@@ -181,16 +235,12 @@ input {
 }
 
 .button {
-  background-color: green;
+  background-color: #9448bc;
   color: white;
   width: auto;
   border-radius: 10px;
-  border: solid darkgreen 1px;
+  border: solid #7699d4 2px;
   padding: 1em;
   height: auto;
-  /* box-shadow: 0 0 0 3px darkgreen, 0.5em 0.5em 3px 0 rgb(0 0 0 / 50%); */
-}
-
-.button:hover {
-  cursor: pointer;
+  /* box-shadow: 0 0 0 1px #480355, 0.3em 0.3em 1px 0 #47035523; */
 }
