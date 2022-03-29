@@ -14,7 +14,7 @@ function CreateComment({ post }) {
       },
       body: JSON.stringify({
         content: content,
-        user_id: 101,
+        user_id: 1,
         post_id: post.id,
       }),
     });

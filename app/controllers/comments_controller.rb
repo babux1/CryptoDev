@@ -32,8 +32,6 @@ class CommentsController < ApplicationController
             render json: comment
         end
     
-    
-    
         private
     
         def params_create
