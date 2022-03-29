@@ -16,13 +16,14 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <h1>CryptoDev Forum</h1>
+        <h1 className="header-1-c">CryptoDev Forum</h1>
         <ForumSearch
+          className="header-2-c"
           search={search}
           setSearch={setSearch}
           setFilteredResults={setFilteredResults}
         />
-        <Login />
+        <Login className="header-3c" />
       </header>
       <Nav />
 

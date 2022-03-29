@@ -32,7 +32,7 @@ function Post({ id, title, content }) {
       <h2 className="h2-bar">{post.title}</h2>
       <div className="comment">
         <p>{post.content}</p>
-        <p className="post-stats">Post created by: {post.user}</p>
+        <p className="post-stats">Post created by: {"!!!FIX THIS!!!!"}</p>
       </div>
       {renderComments}
       <br />

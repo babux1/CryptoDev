@@ -4,12 +4,14 @@ body {
   padding: 0;
   font-family: BentonSans, sans-serif;
   font-weight: 500;
+  font-size: 18px;
   background-color: rgb(248, 248, 248);
 }
 
 header {
   font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
     sans-serif;
+  color: white;
 }
 
 h1,
@@ -17,7 +19,7 @@ h2,
 h3 {
   font-family: "Quicksand", sans-serif;
   text-align: center;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 input {
@@ -34,6 +36,23 @@ input {
   border-radius: 0px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
 .app {
   display: flex;
   align-content: center;
@@ -47,16 +66,45 @@ input {
 .header {
   display: flex;
   flex-direction: row;
-  background-color: blanchedalmond;
+  background-color: #7699d4;
+}
+
+.header-1-c {
+  display: flex;
+  width: 33%;
+  padding-left: 0.5em;
+  /* border: solid black 1px; */
+}
+.header-2-c {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 33%;
+}
+.header-3-c {
+  display: flex;
+  float: right;
+  width: 33%;
 }
 
 .login {
   display: flex;
   align-items: center;
   float: right;
-  background-color: lightgrey;
-  padding: 1em;
   margin: auto;
+}
+
+.login-btn {
+  padding: 0.5em 1em 0.5em 1em;
+  margin-left: 1em;
+  background-color: rgb(236, 236, 236);
+  color: black;
+  width: auto;
+  border-radius: 5px;
+  /* border: solid darkgray 2px; */
+  padding: auto;
+  height: auto;
+  /* box-shadow: 0 0 0 1px darkgray, 0.2em 0.2em 1px 0 #47035523; */
 }
 
 .search {
@@ -65,11 +113,10 @@ input {
   align-items: center;
   align-content: center;
   width: auto;
+  margin: auto;
 }
 
 .search-input {
-  /* display: block; */
-  /* float: right; */
   width: 100%;
   height: auto;
   border-radius: 5px;
@@ -111,7 +158,7 @@ input {
 .left-column {
   display: block;
   margin: auto;
-  width: 80%;
+  width: 90%;
 }
 
 .right-column {
@@ -140,6 +187,7 @@ input {
   margin: 1em;
   padding: 0.5em 0.5em 0.5em 0.5em;
   border: 2px solid #7699d4;
+  border-radius: 10px;
 }
 
 .forum-post-preview {
@@ -173,7 +221,6 @@ input {
   margin: 2em 2em 0em 2em;
   padding: 0.5em 1.5em 0.5em 1.5em;
   border: 1px solid #7699d4;
-  /* box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%); */
   border-radius: 10px;
 }
 
@@ -196,13 +243,4 @@ input {
   padding: 1em;
   height: auto;
   /* box-shadow: 0 0 0 1px #480355, 0.3em 0.3em 1px 0 #47035523; */
-}
-
-.button:hover {
-  cursor: pointer;
-  /* transform: scale(1.05); */
-}
-
-.button:active {
-  transform: translateY(2px);
 }

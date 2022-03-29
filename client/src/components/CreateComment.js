@@ -6,7 +6,7 @@ function CreateComment({ post }) {
   const [postID, setPostID] = useState();
 
   function handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     fetch("/comments", {
       method: "POST",
       headers: {
@@ -14,7 +14,7 @@ function CreateComment({ post }) {
       },
       body: JSON.stringify({
         content: content,
-        user_id: 81,
+        user_id: 1,
         post_id: post.id,
       }),
     });
