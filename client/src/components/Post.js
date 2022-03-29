@@ -15,8 +15,6 @@ function Post({ id, title, content }) {
       });
   }, []);
 
-  console.log(post);
-
   const renderComments = post.comments?.map((comment) => {
     const user = post.users.find((user) => comment.user_id == user.id);
     return (
@@ -29,15 +27,16 @@ function Post({ id, title, content }) {
     );
   });
 
-  // post.comments.map((comment) => console.log(comment));
-
   return (
-    <div className="forum-post-preview">
-      <h2>{post.title}</h2>
-      <p>{post.content}</p>
+    <div className="post">
+      <h2 className="h2-bar">{post.title}</h2>
+      <div className="comment">
+        <p>{post.content}</p>
+        <p className="post-stats">Post created by: {"!!!FIX THIS!!!!"}</p>
+      </div>
       {renderComments}
       <br />
-      <CreateComment />
+      <CreateComment post={post} />
     </div>
   );
 }

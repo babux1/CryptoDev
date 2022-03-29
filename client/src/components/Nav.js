@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Nav() {
   return (
     <div className="nav">
       <a href="/">Home</a>
-      <a href="/">My Page</a>
-      <a href="/">Browse Forums</a>
+      <a href="/">My Profile</a>
     </div>
   );
 }
