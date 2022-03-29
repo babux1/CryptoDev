@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import ForumSearch from "./ForumSearch";
 import Nav from "./Nav";
@@ -10,8 +10,20 @@ import Post from "./Post";
 import ForumsList from "./ForumsList";
 
 function App() {
+
+  const [user, setUser] = useState(null);
   const [search, setSearch] = useState("");
   const [filteredReults, setFilteredResults] = useState([]);
+
+  useEffect(() => {
+    fetch("/me").then( r => {
+      if (r.ok) {
+        r.json().then( user => setUser(user));
+      }
+    });
+  }, []);
+
+  // if (!user) return <Login onLogin = {setUser} />
 
   return (
     <div className="App">
@@ -23,7 +35,6 @@ function App() {
           setSearch={setSearch}
           setFilteredResults={setFilteredResults}
         />
-        <Login className="header-3c" />
       </header>
       <Nav />
 

@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-    before_action :authorize
     skip_before_action :authorize, only: [:postpreviews]
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found

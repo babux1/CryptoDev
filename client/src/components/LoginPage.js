@@ -1,18 +1,50 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Route, BrowserRouter } from "react-router-dom";
+import React, { useState } from "react";
 
-function LoginPage() {
-  return (
-    <div>
-      <form>
-        <input type="text" placeholder="username"></input>
-        <input type="text" placeholder="password"></input>
-        <br></br>
-        <button>Enter</button>
-      </form>
-    </div>
-  );
+function LoginPage({ onLogin }) {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+            })
+            .then((r) => {
+                if (r.ok) {
+                    r.json().then((user) => onLogin(user));
+                } 
+        });
+    }
+
+    return (
+        <div>
+            <form onSubmit = {handleSubmit}>
+                <label htmlFor = "username">Username</label>
+                    <input 
+                    type = "text" 
+                    placeholder = "username"
+                    id = "username"
+                    value = {username}
+                    onChange = { e => setUsername(e.target.value)}
+                    />
+                <label htmlFor = "password">Password</label>
+                    <input 
+                    type = "text" 
+                    placeholder = "password"
+                    id = "password"
+                    value = {password}
+                    onChange = { e => setPassword(e.target.value)}
+                    />
+                    <br></br>
+                    <button>Enter</button>
+            </form>
+        </div>
+    )
 }
 
 export default LoginPage;

@@ -1,22 +1,49 @@
-import React from "react";
-import LoginPage from "./LoginPage";
-import { Link } from "react-router-dom";
+import React, { useState } from "react"
+import SignupForm from "./SignupForm"
+import LoginPage from "./LoginPage"
 
-function Login() {
+function Login({ onLogin } ) {
+
+  const [showLogin, setShowLogin] = useState(true);
+
   return (
-    <div className="login">
-      <Link to="/loginpage">
-        <button className="login-btn" type="button">
-          Login
+    <div>
+      {showLogin ? (
+        <>
+        <LoginPage onLogin = { onLogin }/>
+        <p>
+          Don't have an account?
+          <button onClick = {() => setShowLogin(false)}>
+            Sign up
+          </button>
+        </p>
+        </>
+      ) : (
+        <>
+          <SignupForm onLogin = { onLogin } />
+          <p>
+            Already have an account?
+            <button onClick = {() => setShowLogin(true)}>
+              Log in here
+            </button>
+          </p>
+        </>
+      )}
+        {/* <Link to="/loginpage">
+        </Link>
+        <Link to="/">
+        <button type="button">
+              Login
         </button>
-      </Link>
-      <Link to="/">
-        <button className="login-btn" type="button">
-          Logout
+        </Link>
+        <Link to="/signup">
+        <button type="signup">
+              Signup
         </button>
-      </Link>
+        </Link> */}
     </div>
-  );
+  )
+  
 }
 
 export default Login;
