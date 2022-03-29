@@ -15,13 +15,13 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      <header className="header">
+        <h1>CryptoDev Forum</h1>
         <ForumSearch
           search={search}
           setSearch={setSearch}
           setFilteredResults={setFilteredResults}
         />
-        <h1>CryptoDev Forum</h1>
         <Login />
       </header>
       <Nav />
