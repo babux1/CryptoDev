@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function CreatePost() {
+function CreatePost({ user }) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [post, setPost] = useState({});
@@ -18,7 +18,7 @@ function CreatePost() {
       body: JSON.stringify({
         title: title,
         content: text,
-        user_id: 1,
+        user_id: user.id,
         forum_id: 1,
       }),
     })
@@ -40,7 +40,7 @@ function CreatePost() {
         <input
           className="form-input"
           type="text"
-          required="true"
+          required={true}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Title"
@@ -48,7 +48,7 @@ function CreatePost() {
         <input
           className="form-input"
           type="text"
-          required="true"
+          required={true}
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Text"

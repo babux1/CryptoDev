@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function LoginPage({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,29 +21,39 @@ function LoginPage({ onLogin }) {
         r.json().then((user) => onLogin(user));
       }
     });
+    navigate("/");
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
+    <div className="form">
+      <form className="create-post-form" onSubmit={handleSubmit}>
+        <label htmlFor="username">
+          <h3>Username</h3>
+        </label>
         <input
+          className="form-input"
+          required={true}
           type="text"
           placeholder="username"
           id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">
+          <h3>Password</h3>
+        </label>
         <input
-          type="text"
+          className="form-input"
+          required={true}
+          type="password"
           placeholder="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        <button>Enter</button>
+        <input className="button" type="submit" value="Enter" />
+        {/* <button>Enter</button> */}
       </form>
     </div>
   );

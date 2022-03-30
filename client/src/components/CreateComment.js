@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-function CreateComment({ post }) {
+function CreateComment({ post, user }) {
   const [content, setContent] = useState("");
-  // const [userID, setUserID] = useState();
-  // const [postID, setPostID] = useState();
 
   function handleSubmit(e) {
     // e.preventDefault();
@@ -14,11 +12,11 @@ function CreateComment({ post }) {
       },
       body: JSON.stringify({
         content: content,
-        user_id: 1,
+        user_id: user.id,
         post_id: post.id,
       }),
     });
-    setContent("");
+    // setContent("");
   }
 
   return (
@@ -29,7 +27,7 @@ function CreateComment({ post }) {
           <input
             className="comment-input"
             type="text"
-            required="true"
+            required={true}
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Leave a comment"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import ForumSearch from "./ForumSearch";
 import Nav from "./Nav";
 
@@ -23,7 +23,9 @@ function App() {
     });
   }, []);
 
-  // if (!user) return <SignUpForm onLogin={setUser} />;
+  console.log(user);
+
+  if (!user) return <SignUpForm onLogin={setUser} />;
 
   return (
     <div className="App">
@@ -35,6 +37,12 @@ function App() {
           setSearch={setSearch}
           setFilteredResults={setFilteredResults}
         />
+        <Link to="/loginpage">
+          <button>{user ? "Login" : "Logout"}</button>
+        </Link>
+        <Link to="/signupform">
+          <button>Signup</button>
+        </Link>
       </header>
       <Nav />
 
@@ -44,14 +52,15 @@ function App() {
             path="/"
             element={<Forum search={search} filteredReults={filteredReults} />}
           ></Route>
-          <Route path="posts/:id" element={<Post />} />
-          <Route path="createpost" element={<CreatePost />} />
+          <Route path="posts/:id" element={<Post post={user} />} />
+          <Route path="createpost" element={<CreatePost user={user} />} />
         </Routes>
       </div>
 
       <div>
         <Routes>
           <Route path="loginpage" element={<LoginPage />} />
+          <Route path="signupform" element={<SignUpForm />} />
         </Routes>
       </div>
     </div>
