@@ -38,7 +38,7 @@ function App() {
       </header>
       <Nav />
 
-      <div className="left-column">
+      <div className="container">
         <Routes>
           <Route
             path="/"

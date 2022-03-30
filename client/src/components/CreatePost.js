@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+  const [post, setPost] = useState({});
+
+  const navigate = useNavigate();
 
   function handleCreatePost(e) {
     e.preventDefault();
-    console.log(e.target.value);
     fetch("/posts", {
       method: "POST",
       headers: {
@@ -19,16 +21,24 @@ function CreatePost() {
         user_id: 1,
         forum_id: 1,
       }),
-    });
-    setTitle("");
-    setText("");
+    })
+      .then((resp) => resp.json())
+      .then((post) => {
+        console.log(post);
+        setPost(post);
+      });
+    // console.log(post);
+    console.log(post?.id);
+
+    navigate(`/posts/${id}`);
   }
 
   return (
-    <div>
+    <div className="form">
       <h3>Create Post</h3>
       <form className="create-post-form" onSubmit={handleCreatePost}>
         <input
+          className="form-input"
           type="text"
           required="true"
           value={title}
@@ -36,6 +46,7 @@ function CreatePost() {
           placeholder="Title"
         />
         <input
+          className="form-input"
           type="text"
           required="true"
           value={text}

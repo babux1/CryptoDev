@@ -7,9 +7,10 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <div className="login-page">
-      <form>
+    <div className="form">
+      <form className="create-post-form">
         <input
+          className="form-input"
           type="text"
           required="true"
           value={username}
@@ -18,14 +19,15 @@ function LoginPage() {
         />
 
         <input
-          type="text"
+          className="form-input"
+          type="password"
           required="true"
           value={password}
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        <button className="login-btn">Enter</button>
+        <input className="login-btn" type="submit" value="submit" />
       </form>
     </div>
   );

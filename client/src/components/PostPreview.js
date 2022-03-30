@@ -11,20 +11,6 @@ function PostPreview({
   id,
   // setSelectedPost,
 }) {
-  function handlePostClick(e) {
-    console.log(e.target);
-    // setPostID(id);
-    // open post page
-    // fetch(`/posts/${id}`)
-    // .then((resp) => resp.json())
-    // .then((post) => {
-    // console.log(post);
-    // setSelectedPost(post);
-    // });
-  }
-  // const params = useParams();
-  // console.log(params);
-
   return (
     <div className="forum-post-preview">
       <div className="avatar-display">
@@ -39,7 +25,7 @@ function PostPreview({
       </div>
       <div className="content-preview">
         <Link to={`/posts/${id}`}>
-          <h2 onClick={handlePostClick}>{title}</h2>
+          <h2>{title}</h2>
         </Link>
         {content}
 
