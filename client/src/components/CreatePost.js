@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CreatePost() {
-  return <div>(Create Post here)</div>;
+  return (
+    <div>
+      <form>
+          
+      </form>
+    </div>
+  );
 }
 
 export default CreatePost;

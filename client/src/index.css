@@ -191,6 +191,22 @@ img {
   border-radius: 10px;
 }
 
+.create-post {
+  display: block;
+  margin: auto;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.create-post-btn {
+  padding: 0.5em 1em 0.5em 1em;
+  background-color: rgb(236, 236, 236);
+  color: black;
+  width: auto;
+  border-radius: 5px;
+  padding: auto;
+  height: auto;
+}
+
 .h2-bar {
   width: auto;
   background-color: white;
@@ -271,15 +287,19 @@ img {
 }
 
 .create-comment {
+  display: block;
   padding: 0.5em;
+  border: solid black 1px;
 }
 
 .comment-input {
+  display: block;
   height: 5em;
-  width: 50%;
-  text-align: center;
+  width: 80%;
+  text-align: left;
   border-radius: 5px;
-  padding: 0em;
+  /* margin: 1em; */
+  padding: 0.5em 1.5em;
   font-size: large;
   word-wrap: break-word;
 }

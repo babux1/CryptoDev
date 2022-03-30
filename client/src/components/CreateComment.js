@@ -25,10 +25,11 @@ function CreateComment({ post }) {
     <div className="create-comment">
       <form onSubmit={handleSubmit}>
         <label>
-          <h4>Post Comment:</h4>
+          {/* <h4>Post Comment:</h4> */}
           <input
             className="comment-input"
             type="text"
+            required="true"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Leave a comment"

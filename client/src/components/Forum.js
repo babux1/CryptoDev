@@ -35,17 +35,21 @@ function Forum({ search, filteredReults }) {
     );
   });
 
-  // function date(timestamp) {
-  //   const date = new Date(timestamp);
-  //   const day = date.getDay();
-  //   const month = date.getUTCMonth();
-  //   const year = date.getFullYear();
-  //   const hours = date.getHours();
-  //   const minutes = date.getMinutes();
-  //   return `${month}, ${day}, ${year}, ${hours}:${minutes}`;
-  // }
+  function handleCreatePost(e) {
+    console.log(e.target);
+    // fetch POST post/create
+  }
 
-  return <div className="forum">{displayPosts}</div>;
+  return (
+    <div className="forum">
+      <div className="create-post">
+        <button className="create-post-btn" onClick={handleCreatePost}>
+          Create Post
+        </button>
+      </div>
+      {displayPosts}
+    </div>
+  );
 }
 
 export default Forum;

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 import CreateComment from "./CreateComment";
 
-function Post({ id, title, content }) {
+function Post() {
   const [post, setPost] = useState({});
   const params = useParams();
 
@@ -33,7 +33,7 @@ function Post({ id, title, content }) {
       <h2 className="h2-bar">{post.title}</h2>
       <div className="comment">
         <p>{post.content}</p>
-        <p className="post-stats">Post created by: {"!!!FIX THIS!!!!"}</p>
+        {/* <p className="post-stats">Post created by: {post.user.username}</p> */}
       </div>
       {renderComments}
       <br />
