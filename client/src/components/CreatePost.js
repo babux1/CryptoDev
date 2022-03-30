@@ -30,7 +30,7 @@ function CreatePost() {
     // console.log(post);
     console.log(post?.id);
 
-    navigate(`/posts/${id}`);
+    // navigate(`/posts/${id}`);
   }
 
   return (

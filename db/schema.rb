@@ -46,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_30_171010) do
     t.string "password_digest"
     t.string "btc_address"
     t.boolean "admin"
-    t.string "avatar_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

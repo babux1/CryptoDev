@@ -1,11 +1,5 @@
 class SessionsController < ApplicationController
-    # skip_before_action :authorized, only: :create
-
-    def index
-        session[:session_hello] ||= "World"
-        cookies[:cookies_hello] ||= "World"
-        render json: { session: session, cookies: cookies.to_hash }
-    end
+    skip_before_action :authorized, only: :create
 
     def create
         user = User.find_by(username: params[:username])
@@ -13,7 +7,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             render json: user, status: :created
         else
-            # render json {error: {login: "invalid username or password"}}, status: :unauthorized
+            render json {error: {login: "invalid username or password"}}, status: :unauthorized
         end
     end
 
