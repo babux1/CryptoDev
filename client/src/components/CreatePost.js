@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function CreatePost() {
   const [title, setTitle] = useState("");
@@ -15,10 +16,12 @@ function CreatePost() {
       body: JSON.stringify({
         title: title,
         content: text,
-        user: 101,
-        forum: 4,
+        user_id: 1,
+        forum_id: 1,
       }),
     });
+    setTitle("");
+    setText("");
   }
 
   return (

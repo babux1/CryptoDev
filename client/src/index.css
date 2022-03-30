@@ -156,8 +156,8 @@ img {
 
 /* Change the color of links on hover */
 .nav a:hover {
-  background-color: #90fcf9;
-  color: black;
+  background-color: #480355;
+  color: white;
 }
 
 /* Add a color to the active/current link */
@@ -184,9 +184,9 @@ img {
 .post {
   padding: 0.5em 0.5em 3em 0.5em;
   width: 100%;
-  background-color: #90fcf9;
-  border: 1px solid #480355;
-  box-shadow: 0 0 0 3px #7699d4, 1em 1em 3px 0 rgba(0, 0, 0, 0.247);
+  background-color: rgb(202, 202, 202);
+  /* border: 1px solid #480355; */
+  box-shadow: 0 0 0 3px darkgray, 1em 1em 3px 0 rgba(0, 0, 0, 0.247);
   margin-top: 2em;
   border-radius: 10px;
 }
@@ -240,7 +240,7 @@ img {
   width: auto;
   background-color: white;
   margin: 0.5em;
-  /* padding: 0.5em 1.5em 0.5em 1.5em; */
+
   padding: 0.5em;
   padding: auto;
   border: 1px solid #7699d4;

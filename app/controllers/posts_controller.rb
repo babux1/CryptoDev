@@ -45,7 +45,7 @@ class PostsController < ApplicationController
         # custom, non RESTfull routes
         def postpreviews
             posts = []
-            Post.all.each do |post| 
+            Post.all.order(created_at: :desc).each do |post| 
                posts << { "title" => post.title, "content" => post.content, "poster" => post.user.username, "date" => post.created_at, "id" => post.id, "comments" => post.comments.count, "avatar_url" => post.user.avatar_url }
             end 
             render json: posts
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     
     
         def post_params 
-            params.permit(:title, :content, :user, :forum)
+            params.permit(:title, :content, :user_id, :forum_id)
         end
         
         def params_update
