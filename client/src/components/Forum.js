@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import PostPreview from "./PostPreview";
 
@@ -43,9 +44,11 @@ function Forum({ search, filteredReults }) {
   return (
     <div className="forum">
       <div className="create-post">
-        <button className="create-post-btn" onClick={handleCreatePost}>
-          Create Post
-        </button>
+        <Link to={"/createpost"}>
+          <button className="create-post-btn" onClick={handleCreatePost}>
+            Create Post
+          </button>
+        </Link>
       </div>
       {displayPosts}
     </div>

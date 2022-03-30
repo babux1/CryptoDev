@@ -2,7 +2,6 @@ class PostsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
     
-    
         def index 
             posts = Post.all 
             render json: posts
@@ -64,8 +63,9 @@ class PostsController < ApplicationController
     
     
         def post_params 
-            params.permit(:title, :forum_id, :user_id)
+            params.permit(:title, :content, :user_id)
         end
+        
         def params_update
             params.permit(:title)
         end

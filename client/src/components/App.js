@@ -7,6 +7,7 @@ import Login from "./Login";
 import LoginPage from "./LoginPage";
 import Forum from "./Forum";
 import Post from "./Post";
+import CreatePost from "./CreatePost";
 
 function App() {
   // const [user, setUser] = useState(null);
@@ -44,6 +45,7 @@ function App() {
             element={<Forum search={search} filteredReults={filteredReults} />}
           ></Route>
           <Route path="posts/:id" element={<Post />} />
+          <Route path="createpost" element={<CreatePost />} />
         </Routes>
       </div>
 
