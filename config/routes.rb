@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/sessions", to: "sessions#index"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
-  # get "/auth", to: "users#show"
+  post "/signup", to: "users#create"
   # delete "/logout", to: "sessions#destroy"
 
   get '/postpreviews', to: "posts#postpreviews"

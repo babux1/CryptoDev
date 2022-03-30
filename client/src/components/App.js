@@ -24,6 +24,18 @@ function App() {
 
   // if (!user) return <Login onLogin={setUser} />;
 
+
+  useEffect(() => {
+    fetch("/me").then( r => {
+      if (r.ok) {
+        r.json().then( user => setUser(user));
+      }
+    });
+  }, []);
+
+  // if (!user) return <Login onLogin = {setUser} />
+
+
   return (
     <div className="App">
       <header className="header">
@@ -34,7 +46,6 @@ function App() {
           setSearch={setSearch}
           setFilteredResults={setFilteredResults}
         />
-        <Login className="header-3c" />
       </header>
       <Nav />
 
