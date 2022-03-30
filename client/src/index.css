@@ -53,6 +53,13 @@ a:visited {
   color: black;
 }
 
+img {
+  width: 5em;
+  height: 5em;
+  border: double #9448bc 6px;
+  border-radius: 10px;
+}
+
 .app {
   display: flex;
   align-content: center;
@@ -206,22 +213,49 @@ a:visited {
 }
 
 .post-stats {
-  font-size: small;
+  font-size: medium;
   color: rgb(107, 107, 107);
-}
-
-.create-comment {
-  padding: 0.5em;
+  text-align: center;
 }
 
 .comment {
+  display: flex;
+  flex-direction: row;
   width: auto;
-  /* margin: auto; */
   background-color: white;
   margin: 2em 2em 0em 2em;
   padding: 0.5em 1.5em 0.5em 1.5em;
   border: 1px solid #7699d4;
   border-radius: 10px;
+}
+
+.avatar-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  width: 20%;
+  margin: 0.1em;
+  padding: 0.1em;
+  /* border: solid black 1px; */
+}
+
+.comment-content {
+  display: flex;
+  float: right;
+  margin: 0.1em;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  width: 80%;
+  border-left: solid #9448bc 1px;
+  text-align: justify;
+}
+
+.date {
+  font-size: small;
+}
+
+.create-comment {
+  padding: 0.5em;
 }
 
 .comment-input {

@@ -20,6 +20,7 @@ function Post({ id, title, content }) {
     return (
       <Comment
         key={comment.id}
+        avatar={user.avatar_url}
         content={comment.content}
         user={user.username}
         date={user.created_at}
