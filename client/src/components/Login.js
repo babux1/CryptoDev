@@ -29,18 +29,6 @@ function Login({ onLogin } ) {
           </p>
         </>
       )}
-        {/* <Link to="/loginpage">
-        </Link>
-        <Link to="/">
-        <button type="button">
-              Login
-        </button>
-        </Link>
-        <Link to="/signup">
-        <button type="signup">
-              Signup
-        </button>
-        </Link> */}
     </div>
   )
   

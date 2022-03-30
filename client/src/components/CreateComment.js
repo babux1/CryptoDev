@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 function CreateComment({ post }) {
   const [content, setContent] = useState("");
-  const [userID, setUserID] = useState();
-  const [postID, setPostID] = useState();
+  // const [userID, setUserID] = useState();
+  // const [postID, setPostID] = useState();
 
   function handleSubmit(e) {
     // e.preventDefault();
@@ -14,7 +14,7 @@ function CreateComment({ post }) {
       },
       body: JSON.stringify({
         content: content,
-        user_id: 101,
+        user_id: 1,
         post_id: post.id,
       }),
     });
@@ -25,10 +25,11 @@ function CreateComment({ post }) {
     <div className="create-comment">
       <form onSubmit={handleSubmit}>
         <label>
-          <h4>Post Comment:</h4>
+          {/* <h4>Post Comment:</h4> */}
           <input
             className="comment-input"
             type="text"
+            required="true"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Leave a comment"

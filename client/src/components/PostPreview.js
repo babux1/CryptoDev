@@ -1,44 +1,40 @@
-import React, { useState } from "react";
-import { NavLink, Route, Routes, Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function PostPreview({
   title,
   content,
   poster,
+  avatarURL,
   date,
   comments,
   id,
-  // setPostID,
-  setSelectedPost,
+  // setSelectedPost,
 }) {
-  function handlePostClick(e) {
-    console.log(e.target);
-    // setPostID(id);
-    // open post page
-    // fetch(`/posts/${id}`)
-    // .then((resp) => resp.json())
-    // .then((post) => {
-    // console.log(post);
-    // setSelectedPost(post);
-    // });
-  }
-  // const params = useParams();
-  // console.log(params);
-
   return (
     <div className="forum-post-preview">
-      <Link to={`/posts/${id}`}>
-        <h2 onClick={handlePostClick}>{title}</h2>
-      </Link>
-      <p className="content-preview">{content}</p>
-      <hr />
-      <p className="post-stats">
-        Posted by: {poster} <br />
-        Post created: {date}
-        <br />
-        💬 {comments} comments
-      </p>
+      <div className="avatar-display">
+        <img src={avatarURL} alt="{poster}" />
+        <p>
+          <span className="username-font">
+            <strong>Posted by:</strong>
+            <br />
+            {poster}
+          </span>
+        </p>
+      </div>
+      <div className="content-preview">
+        <Link to={`/posts/${id}`}>
+          <h2>{title}</h2>
+        </Link>
+        {content}
+
+        <p className="post-stats">
+          💬 {comments} comments
+          <br />
+          Post created: {date}
+        </p>
+      </div>
     </div>
   );
 }

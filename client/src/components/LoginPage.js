@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-
 function LoginPage({ onLogin }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
+    const [email, setEmail] = useState("")
+    
+  
     function handleSubmit(e) {
         e.preventDefault();
         fetch("/login", {
@@ -12,7 +13,7 @@ function LoginPage({ onLogin }) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ username, password, email }),
             })
             .then((r) => {
                 if (r.ok) {

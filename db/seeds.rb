@@ -9,7 +9,7 @@ puts "seeding... 🪴🪴🪴"
 50.times do
     User.create(
         username: Faker::Twitter.screen_name, 
-        password: Faker::Barcode.ean, 
+        # password: Faker::Barcode.ean, 
         email: Faker::Internet.email,
         btc_address: Faker::Blockchain::Bitcoin.address,
         admin: false,
@@ -32,7 +32,7 @@ Forum.create(title: "Bitcoin", description: "All things Bitcoin")
     )
 end
 
-1000.times do
+500.times do
     Comment.create(
         content: Faker::Quote.matz,
         user: User.all.sample,

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 import CreateComment from "./CreateComment";
 
-function Post({ id, title, content }) {
+function Post() {
   const [post, setPost] = useState({});
   const params = useParams();
 
@@ -13,13 +13,14 @@ function Post({ id, title, content }) {
       .then((posts) => {
         setPost(posts);
       });
-  }, []);
+  }, [params.id]);
 
   const renderComments = post.comments?.map((comment) => {
-    const user = post.users.find((user) => comment.user_id == user.id);
+    const user = post.users.find((user) => comment.user_id === user.id);
     return (
       <Comment
         key={comment.id}
+        avatar={user.avatar_url}
         content={comment.content}
         user={user.username}
         date={user.created_at}
@@ -30,10 +31,27 @@ function Post({ id, title, content }) {
   return (
     <div className="post">
       <h2 className="h2-bar">{post.title}</h2>
+
       <div className="comment">
-        <p>{post.content}</p>
-        <p className="post-stats">Post created by: {"!!!FIX THIS!!!!"}</p>
+        <div className="avatar-display">
+          <img src={post.user?.avatar_url} alt={post.user?.username} />
+          <p className="post-stats">
+            <strong>Posted by:</strong>
+            <br />
+            {post.user?.username}
+          </p>
+        </div>
+        <div className="comment-content">
+          <p>
+            {post.content}
+            <br />
+            ________
+            <br />
+            <span className="date">Date posted: {post.user?.created_at}</span>
+          </p>
+        </div>
       </div>
+
       {renderComments}
       <br />
       <CreateComment post={post} />

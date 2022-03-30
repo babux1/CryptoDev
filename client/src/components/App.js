@@ -2,18 +2,28 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import ForumSearch from "./ForumSearch";
 import Nav from "./Nav";
-import { Link } from "react-router-dom";
+
 import Login from "./Login";
 import LoginPage from "./LoginPage";
 import Forum from "./Forum";
 import Post from "./Post";
-import ForumsList from "./ForumsList";
+import CreatePost from "./CreatePost";
 
 function App() {
-
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
   const [search, setSearch] = useState("");
   const [filteredReults, setFilteredResults] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
+
+  // if (!user) return <Login onLogin={setUser} />;
+
 
   useEffect(() => {
     fetch("/me").then( r => {
@@ -24,6 +34,7 @@ function App() {
   }, []);
 
   // if (!user) return <Login onLogin = {setUser} />
+
 
   return (
     <div className="App">
@@ -38,13 +49,14 @@ function App() {
       </header>
       <Nav />
 
-      <div className="left-column">
+      <div className="container">
         <Routes>
           <Route
             path="/"
             element={<Forum search={search} filteredReults={filteredReults} />}
           ></Route>
           <Route path="posts/:id" element={<Post />} />
+          <Route path="createpost" element={<CreatePost />} />
         </Routes>
       </div>
 

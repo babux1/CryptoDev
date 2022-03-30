@@ -4,7 +4,6 @@ class PostsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
     
-    
         def index 
             posts = Post.all 
             render json: posts
@@ -49,8 +48,8 @@ class PostsController < ApplicationController
         # custom, non RESTfull routes
         def postpreviews
             posts = []
-            Post.all.each do |post| 
-               posts << { "title" => post.title, "content" => post.content, "poster" => post.user.username, "date" => post.created_at, "id" => post.id, "comments" => post.comments.count }
+            Post.all.order(created_at: :desc).each do |post| 
+               posts << { "title" => post.title, "content" => post.content, "poster" => post.user.username, "date" => post.created_at, "id" => post.id, "comments" => post.comments.count, "avatar_url" => post.user.avatar_url }
             end 
             render json: posts
         end
@@ -67,8 +66,9 @@ class PostsController < ApplicationController
     
     
         def post_params 
-            params.permit(:title, :forum_id, :user_id)
+            params.permit(:title, :content, :user_id, :forum_id)
         end
+        
         def params_update
             params.permit(:title)
         end
