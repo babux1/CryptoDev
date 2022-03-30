@@ -5,11 +5,10 @@ Forum.destroy_all
 
 puts "seeding... 🪴🪴🪴"
 
-
 50.times do
     User.create(
         username: Faker::Twitter.screen_name, 
-        # password: Faker::Barcode.ean, 
+        password: Faker::Barcode.ean, 
         email: Faker::Internet.email,
         btc_address: Faker::Blockchain::Bitcoin.address,
         admin: false,
@@ -17,11 +16,7 @@ puts "seeding... 🪴🪴🪴"
      )
 end
 
-
 Forum.create(title: "Solidity", description: "All things Solidity")
-Forum.create(title: "Ethereum", description: "Ethereum general discussion")
-Forum.create(title: "Bitcoin", description: "All things Bitcoin")
-
 
 100.times do
     Post.create(
@@ -39,7 +34,5 @@ end
         post: Post.all.sample
     )
 end
-
-
 
 puts "seeding done!"
