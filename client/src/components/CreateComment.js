@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 function CreateComment({ post }) {
   const [content, setContent] = useState("");
-  const [userID, setUserID] = useState();
-  const [postID, setPostID] = useState();
+  // const [userID, setUserID] = useState();
+  // const [postID, setPostID] = useState();
 
   function handleSubmit(e) {
     // e.preventDefault();

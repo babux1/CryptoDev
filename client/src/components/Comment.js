@@ -4,7 +4,7 @@ function Comment({ content, user, date, avatar }) {
   return (
     <div className="comment">
       <div className="avatar-display">
-        <img src={avatar} />
+        <img src={avatar} alt={user} />
         <p className="post-stats">
           <strong>User:</strong>
           <br />
@@ -15,7 +15,8 @@ function Comment({ content, user, date, avatar }) {
       <div className="comment-content">
         <p>
           {content}
-          <hr />
+          <p>________</p>
+
           <span className="date">Date posted: {date}</span>
         </p>
       </div>

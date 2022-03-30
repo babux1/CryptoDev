@@ -13,10 +13,10 @@ function Post({ id, title, content }) {
       .then((posts) => {
         setPost(posts);
       });
-  }, []);
+  }, [params.id]);
 
   const renderComments = post.comments?.map((comment) => {
-    const user = post.users.find((user) => comment.user_id == user.id);
+    const user = post.users.find((user) => comment.user_id === user.id);
     return (
       <Comment
         key={comment.id}

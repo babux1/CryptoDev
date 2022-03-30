@@ -22,6 +22,10 @@ h3 {
   font-weight: bold;
 }
 
+h2 {
+  text-decoration: underline;
+}
+
 input {
   display: flex;
   flex-direction: row;
@@ -198,24 +202,20 @@ img {
 }
 
 .forum-post-preview {
+  display: flex;
+  flex-direction: row;
   width: auto;
-  /* margin: auto; */
   background-color: white;
-  margin: 2em 2em 0em 2em;
-  padding: 0.5em 1.5em 0.5em 1.5em;
+  margin: 0.5em;
+  padding: auto;
   border: 1px solid #7699d4;
-  /* box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgb(0 0 0 / 50%); */
   border-radius: 15px;
-}
-
-.content-preview {
-  color: rgb(107, 107, 107);
 }
 
 .post-stats {
   font-size: medium;
   color: rgb(107, 107, 107);
-  text-align: center;
+  text-align: left;
 }
 
 .comment {
@@ -223,8 +223,10 @@ img {
   flex-direction: row;
   width: auto;
   background-color: white;
-  margin: 2em 2em 0em 2em;
-  padding: 0.5em 1.5em 0.5em 1.5em;
+  margin: 0.5em;
+  /* padding: 0.5em 1.5em 0.5em 1.5em; */
+  padding: 0.5em;
+  padding: auto;
   border: 1px solid #7699d4;
   border-radius: 10px;
 }
@@ -232,12 +234,26 @@ img {
 .avatar-display {
   display: flex;
   flex-direction: column;
+  float: left;
   align-items: center;
   float: left;
   width: 20%;
-  margin: 0.1em;
-  padding: 0.1em;
-  /* border: solid black 1px; */
+  margin: auto;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+}
+
+.content-preview {
+  padding: 1em;
+  color: rgb(107, 107, 107);
+  border-left: solid black 1px;
+  margin: auto;
+  padding: auto;
+  width: 75%;
+}
+
+.username-font {
+  text-align: center;
+  font-size: medium;
 }
 
 .comment-content {

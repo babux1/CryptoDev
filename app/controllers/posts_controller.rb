@@ -47,7 +47,7 @@ class PostsController < ApplicationController
         def postpreviews
             posts = []
             Post.all.each do |post| 
-               posts << { "title" => post.title, "content" => post.content, "poster" => post.user.username, "date" => post.created_at, "id" => post.id, "comments" => post.comments.count }
+               posts << { "title" => post.title, "content" => post.content, "poster" => post.user.username, "date" => post.created_at, "id" => post.id, "comments" => post.comments.count, "avatar_url" => post.user.avatar_url }
             end 
             render json: posts
         end
