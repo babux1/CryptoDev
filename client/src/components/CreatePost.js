@@ -15,7 +15,8 @@ function CreatePost() {
       body: JSON.stringify({
         title: title,
         content: text,
-        user_id: 1,
+        user: 101,
+        forum: 4,
       }),
     });
   }

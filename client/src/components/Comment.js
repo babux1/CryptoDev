@@ -3,6 +3,7 @@ import React from "react";
 function Comment({ content, user, date, avatar }) {
   return (
     <div className="comment">
+      
       <div className="avatar-display">
         <img src={avatar} alt={user} />
         <p className="post-stats">
@@ -12,11 +13,13 @@ function Comment({ content, user, date, avatar }) {
           <br />
         </p>
       </div>
+
       <div className="comment-content">
         <p>
           {content}
-          <p>________</p>
-
+          <br />
+          ________
+          <br />
           <span className="date">Date posted: {date}</span>
         </p>
       </div>

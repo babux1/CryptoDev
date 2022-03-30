@@ -31,10 +31,27 @@ function Post() {
   return (
     <div className="post">
       <h2 className="h2-bar">{post.title}</h2>
+
       <div className="comment">
-        <p>{post.content}</p>
-        {/* <p className="post-stats">Post created by: {post.user.username}</p> */}
+        <div className="avatar-display">
+          <img src={post.user?.avatar_url} alt={post.user?.username} />
+          <p className="post-stats">
+            <strong>Posted by:</strong>
+            <br />
+            {post.user?.username}
+          </p>
+        </div>
+        <div className="comment-content">
+          <p>
+            {post.content}
+            <br />
+            ________
+            <br />
+            <span className="date">Date posted: {post.user?.created_at}</span>
+          </p>
+        </div>
       </div>
+
       {renderComments}
       <br />
       <CreateComment post={post} />
