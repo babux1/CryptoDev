@@ -12,7 +12,8 @@ puts "seeding... 🪴🪴🪴"
         password: Faker::Barcode.ean, 
         email: Faker::Internet.email,
         btc_address: Faker::Blockchain::Bitcoin.address,
-        admin: false
+        admin: false,
+        avatar_url: Faker::Avatar.image
      )
 end
 
