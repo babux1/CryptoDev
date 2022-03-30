@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 import CreateComment from "./CreateComment";
 
-function Post() {
+function Post({ user }) {
   const [post, setPost] = useState({});
   const params = useParams();
 
@@ -54,7 +54,7 @@ function Post() {
 
       {renderComments}
       <br />
-      <CreateComment post={post} />
+      <CreateComment post={post} user={user} />
     </div>
   );
 }
