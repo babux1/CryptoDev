@@ -3,8 +3,6 @@ import React, { useState } from "react";
 function CreateComment({ post, user }) {
   const [content, setContent] = useState("");
 
-  console.log(user);
-
   function handleSubmit(e) {
     // e.preventDefault();
     fetch("/comments", {

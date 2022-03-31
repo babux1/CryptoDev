@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function CreatePost({ user }) {
+function CreatePost({ user, setPosts }) {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [post, setPost] = useState({});
@@ -27,9 +27,6 @@ function CreatePost({ user }) {
         console.log(post);
         setPost(post);
       });
-    // console.log(post);
-    console.log(post?.id);
-
     navigate("/");
   }
 

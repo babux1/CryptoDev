@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import PostPreview from "./PostPreview";
 
-function Forum({ search, filteredReults }) {
-  const [posts, setPosts] = useState([]);
+function Forum({ search, filteredReults, posts, setPosts }) {
+  // const [posts, setPosts] = useState([]);
   let searchTerms;
   {
     search === "" ? (searchTerms = posts) : (searchTerms = filteredReults);
@@ -34,21 +34,17 @@ function Forum({ search, filteredReults }) {
     );
   });
 
-  function handleCreatePost(e) {
-    console.log(e.target);
-    // fetch POST post/create
-  }
-
   return (
     <div className="forum">
       <div className="create-post">
         <Link to={"/createpost"}>
-          <button className="create-post-btn" onClick={handleCreatePost}>
-            Create Post
-          </button>
+          <button className="create-post-btn">Create Post</button>
         </Link>
       </div>
       {displayPosts}
+      <Link to={"/createpost"}>
+        <button className="create-post-btn">Create Post</button>
+      </Link>
     </div>
   );
 }

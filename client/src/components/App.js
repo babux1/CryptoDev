@@ -10,6 +10,7 @@ import SignUpForm from "./SignupForm";
 
 function App() {
   const [user, setUser] = useState({});
+  const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredReults, setFilteredResults] = useState([]);
 
@@ -63,15 +64,20 @@ function App() {
               <button className="login-btn">Signup</button>
             </Link>
           </div>
-          <p className="user-profile">
-            {user.username ? (
-              <p>
-                <span className="header-user">
+          <span className="user-profile">
+            {user?.username ? (
+              <span>
+                <p>
                   Welcome, <strong>{user.username}</strong>!
-                </span>
-              </p>
-            ) : null}
-          </p>
+                </p>
+                <p className="user-profile-stats">
+                  Member since: {user.created_at.slice(0, 10)}
+                </p>
+              </span>
+            ) : (
+              <span></span>
+            )}
+          </span>
         </div>
       </header>
       <Nav />
@@ -80,16 +86,26 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Forum search={search} filteredReults={filteredReults} />}
+            element={
+              <Forum
+                search={search}
+                filteredReults={filteredReults}
+                posts={posts}
+                setPosts={setPosts}
+              />
+            }
           ></Route>
           <Route path="posts/:id" element={<Post user={user} />} />
-          <Route path="createpost" element={<CreatePost user={user} />} />
+          <Route
+            path="createpost"
+            element={<CreatePost user={user} setPosts={setPosts} />}
+          />
         </Routes>
       </div>
 
       <div>
         <Routes>
-          <Route path="loginpage" element={<LoginPage />} />
+          <Route path="loginpage" element={<LoginPage setUser={setUser} />} />
           <Route path="signupform" element={<SignUpForm />} />
         </Routes>
       </div>

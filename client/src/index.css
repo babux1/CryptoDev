@@ -63,7 +63,7 @@ a:visited {
 img {
   width: 5em;
   height: 5em;
-  border: double #9448bc 6px;
+  border: solid #2bb6d2 2px;
   border-radius: 10px;
 }
 
@@ -118,6 +118,17 @@ img {
   height: auto;
   text-align: center;
   margin-top: -0.5em;
+}
+
+.user-profile-stats {
+  font-size: small;
+  margin-top: -1em;
+}
+
+.small-img {
+  float: right;
+  width: 50px;
+  height: 50px;
 }
 
 .login {
@@ -204,14 +215,7 @@ img {
 }
 
 .create-post-btn {
-  /* padding: 0.5em 1em 0.5em 1em;
-  background-color: rgb(236, 236, 236);
-  color: #2ab5d3;
   width: auto;
-  border-radius: 5px;
-  padding: auto;
-  height: auto; */
-
   font-size: 10px;
   font-weight: 400;
   text-transform: uppercase;
@@ -219,9 +223,10 @@ img {
   fill: #ffffff;
   color: #ffffff;
   background-color: #ce43ed;
-  border-radius: 50px 50px 50px 50px;
+  border-radius: 50px;
   box-shadow: 0px 21px 11px -10px rgba(253, 253, 253, 0.2);
-  padding: 25px 40px 25px 40px;
+  padding: 25px 40px;
+  vertical-align: auto;
 }
 
 .create-post-btn:hover {

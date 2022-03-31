@@ -49,7 +49,9 @@ function Post({ user }) {
             <br />
             ____
             <br />
-            <span className="date">Date posted: {post.user?.created_at}</span>
+            <span className="date">
+              Date posted: {post.user?.created_at.slice(0, 10)}
+            </span>
           </p>
         </div>
       </div>

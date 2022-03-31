@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function LoginPage({ onLogin }) {
+function LoginPage({ onLogin, setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
 
@@ -18,7 +17,10 @@ function LoginPage({ onLogin }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => {
+          onLogin(user);
+          setUser(user);
+        });
       }
     });
     navigate("/");
@@ -52,8 +54,7 @@ function LoginPage({ onLogin }) {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br></br>
-        <input className="button" type="submit" value="Enter" />
-        {/* <button>Enter</button> */}
+        <input className="create-post-btn" type="submit" value="Enter" />
       </form>
     </div>
   );
