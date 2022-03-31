@@ -38,10 +38,10 @@ function App() {
           setFilteredResults={setFilteredResults}
         />
         <Link to="/loginpage">
-          <button>{user ? "Login" : "Logout"}</button>
+          <button className="login-btn">{user ? "Login" : "Logout"}</button>
         </Link>
         <Link to="/signupform">
-          <button>Signup</button>
+          <button className="login-btn">Signup</button>
         </Link>
       </header>
       <Nav />

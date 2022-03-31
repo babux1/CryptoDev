@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :index, :create, :patch, :destroy]
   resources :comments, only: [:index, :show, :create, :update, :destroy]
   resources :forums, only: [:index, :show, :create]
-  resources :users, only: [:show, :create, :update]
+  resources :users, only: [:show, :create, :update, :destroy]
   
   get "/sessions", to: "sessions#index"
   get "/me", to: "users#show"

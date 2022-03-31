@@ -20,6 +20,7 @@ function SignUpForm({ onLogin }) {
         username,
         password,
         email,
+        avatar_url: avatarURL,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -73,16 +74,15 @@ function SignUpForm({ onLogin }) {
         />
         <label htmlFor="avatar">
           <h3>Enter Avatar URL</h3>
-          <input
-            className="form-input"
-            required={true}
-            type="text"
-            id="avatarURL"
-            value={avatarURL}
-            placeholder="Avatar URL"
-            onChange={(e) => setAvatarURL(e.target.value)}
-          />
         </label>
+        <input
+          className="form-input"
+          type="text"
+          id="avatarURL"
+          value={avatarURL}
+          placeholder="Avatar URL"
+          onChange={(e) => setAvatarURL(e.target.value)}
+        />
         <input className="button" type="submit" value="Enter" />
       </form>
     </div>

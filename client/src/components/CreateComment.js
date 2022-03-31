@@ -3,9 +3,6 @@ import React, { useState } from "react";
 function CreateComment({ post, user }) {
   const [content, setContent] = useState("");
 
-  console.log(user);
-  
-
   function handleSubmit(e) {
     // e.preventDefault();
     fetch("/comments", {
@@ -15,7 +12,7 @@ function CreateComment({ post, user }) {
       },
       body: JSON.stringify({
         content: content,
-        user_id: user.id,
+        user_id: post.user?.id,
         post_id: post.id,
       }),
     });
