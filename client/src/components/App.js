@@ -21,39 +21,56 @@ function App() {
     });
   }, []);
 
-  function handleLogout(){
+  function handleLogout() {
     fetch("/logout", {
-      method: "DELETE" })
-      .then((r) => {
-        if (r.ok) {
-          r.json().then(setUser(null));
-        }
-      });
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then(setUser(null));
+      }
+    });
   }
 
   console.log(user);
 
-  if (!user) return <LoginPage onLogin={setUser} />;
+  // if (!user) return <LoginPage onLogin={setUser} />;
 
   return (
     <div className="App">
       <header className="header">
-        <h1 className="header-1-c">CryptoDev Forum</h1>
-        <ForumSearch
-          className="header-2-c"
-          search={search}
-          setSearch={setSearch}
-          setFilteredResults={setFilteredResults}
-        />
-        <Link to="/loginpage">
-          <button className="login-btn">Login</button>
-          </Link>
-        <Link to="/loginpage">
-          <button className="login-btn" onClick = {handleLogout}>Logout</button>
-        </Link>
-        <Link to="/signupform">
-          <button className="login-btn">Signup</button>
-        </Link>
+        <div className="header-left">
+          <a href="/">
+            <h1>CryptoDev Forum</h1>
+          </a>
+
+          <ForumSearch
+            search={search}
+            setSearch={setSearch}
+            setFilteredResults={setFilteredResults}
+          />
+        </div>
+        <div className="header-right">
+          <div className="btn-wrapper">
+            <Link to="/loginpage">
+              <button className="login-btn">Login</button>
+            </Link>
+            <Link to="/loginpage">
+              <button className="login-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </Link>
+            <Link to="/signupform">
+              <button className="login-btn">Signup</button>
+            </Link>
+          </div>
+          <p className="user-profile">
+            {user.username ? (
+              <p>
+                <span classname="header-user">Welcome, {user.username}!</span>
+              </p>
+            ) : null}
+          </p>
+        </div>
       </header>
       <Nav />
 

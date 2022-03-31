@@ -5,7 +5,7 @@ Forum.destroy_all
 
 puts "seeding... 🪴🪴🪴"
 
-50.times do
+20.times do
     User.create(
         username: Faker::Twitter.screen_name, 
         password: Faker::Barcode.ean, 
@@ -18,7 +18,7 @@ end
 
 Forum.create(title: "Solidity", description: "All things Solidity")
 
-100.times do
+25.times do
     Post.create(
         title: Faker::Job.title,
         content: Faker::Quote.matz,
@@ -27,7 +27,7 @@ Forum.create(title: "Solidity", description: "All things Solidity")
     )
 end
 
-500.times do
+200.times do
     Comment.create(
         content: Faker::Quote.matz,
         user: User.all.sample,

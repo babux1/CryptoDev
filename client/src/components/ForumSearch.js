@@ -14,7 +14,7 @@ function ForumSearch({ search, setSearch, setFilteredResults }) {
   }
 
   return (
-    <div className="search">
+    <div>
       <form>
         <label>
           <input
