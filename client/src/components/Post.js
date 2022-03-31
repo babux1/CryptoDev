@@ -7,6 +7,8 @@ function Post({ user }) {
   const [post, setPost] = useState({});
   const params = useParams();
 
+  console.log(user);
+
   useEffect(() => {
     fetch(`/posts/${params.id}`)
       .then((r) => r.json())

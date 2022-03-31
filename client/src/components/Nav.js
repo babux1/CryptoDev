@@ -4,7 +4,7 @@ function Nav() {
   return (
     <div className="nav">
       <a href="/">Home</a>
-      <a href="/">My Profile</a>
+      {/* <a href="/">My Profile</a> */}
     </div>
   );
 }

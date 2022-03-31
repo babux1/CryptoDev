@@ -26,12 +26,10 @@ function Forum({ search, filteredReults }) {
         id={post.id}
         title={post.title}
         content={post.content.slice(0, 100) + "..."}
-        avatarURL={post.avatar_url}
+        avatarURL={post.avatar_url ? post.avatar_url : post.user?.avatar_url}
         poster={post.poster}
         date={post.date}
         comments={post.comments}
-        // setPostID={setPostID}
-        // setSelectedPost={setSelectedPost}
       />
     );
   });

@@ -27,7 +27,7 @@ function SignUpForm({ onLogin }) {
         r.json().then((user) => onLogin(user));
       }
     });
-    navigate("/");
+    navigate("/loginpage");
   }
 
   return (
