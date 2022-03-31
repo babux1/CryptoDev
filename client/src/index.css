@@ -31,7 +31,7 @@ h1 {
   color: white;
 }
 
-input {
+/* input {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,7 +41,7 @@ input {
   background-color: white;
   margin: 2em 2em 0em 2em;
   padding: 0.5em;
-}
+} */
 
 button:hover {
   cursor: pointer;

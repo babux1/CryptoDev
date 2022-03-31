@@ -25,7 +25,7 @@ function CreateComment({ post, user }) {
         <label>
           {/* <h4>Post Comment:</h4> */}
           <input
-            className="comment-input"
+            className="form-input"
             type="text"
             required={true}
             value={content}
@@ -33,7 +33,8 @@ function CreateComment({ post, user }) {
             placeholder="Leave a comment"
           />
         </label>
-        <input className="button" type="submit" value="Post Comment" />
+        <br />
+        <input className="create-post-btn" type="submit" value="Post Comment" />
       </form>
     </div>
   );

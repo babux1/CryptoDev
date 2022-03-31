@@ -50,7 +50,7 @@ function CreatePost({ user, setPosts }) {
           onChange={(e) => setText(e.target.value)}
           placeholder="Text"
         />
-        <input className="button" type="submit" value="Create Post" />
+        <input className="create-post-btn btn-text" type="submit" value="Create Post" />
       </form>
     </div>
   );
