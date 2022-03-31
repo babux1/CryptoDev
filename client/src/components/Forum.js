@@ -28,7 +28,6 @@ function Forum({ search, filteredReults, posts, setPosts }) {
         content={post.content.slice(0, 100) + "..."}
         avatarURL={post.avatar_url ? post.avatar_url : post.user?.avatar_url}
         poster={post.poster}
-        // date={post.date}
         date={post.date}
         comments={post.comments}
       />
