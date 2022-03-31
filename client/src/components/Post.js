@@ -7,6 +7,8 @@ function Post({ user }) {
   const [post, setPost] = useState({});
   const params = useParams();
 
+  console.log(user);
+
   useEffect(() => {
     fetch(`/posts/${params.id}`)
       .then((r) => r.json())
@@ -45,13 +47,12 @@ function Post({ user }) {
           <p>
             {post.content}
             <br />
-            ________
+            ____
             <br />
             <span className="date">Date posted: {post.user?.created_at}</span>
           </p>
         </div>
       </div>
-
       {renderComments}
       <br />
       <CreateComment post={post} user={user} />
