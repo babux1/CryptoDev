@@ -21,6 +21,16 @@ function App() {
     });
   }, []);
 
+  function handleLogout(){
+    fetch("/logout", {
+      method: "DELETE" })
+      .then((r) => {
+        if (r.ok) {
+          r.json().then(setUser(null));
+        }
+      });
+  }
+
   console.log(user);
 
   if (!user) return <LoginPage onLogin={setUser} />;
@@ -36,7 +46,10 @@ function App() {
           setFilteredResults={setFilteredResults}
         />
         <Link to="/loginpage">
-          <button className="login-btn">{user ? "Login" : "Logout"}</button>
+          <button className="login-btn">Login</button>
+          </Link>
+        <Link to="/loginpage">
+          <button className="login-btn" onClick = {handleLogout}>Logout</button>
         </Link>
         <Link to="/signupform">
           <button className="login-btn">Signup</button>
