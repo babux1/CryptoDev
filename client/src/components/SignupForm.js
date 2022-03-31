@@ -42,7 +42,7 @@ function SignUpForm({ onLogin }) {
           type="text"
           id="username"
           autoComplete="off"
-          value={username}
+          value={username.toLowerCase()}
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
         />

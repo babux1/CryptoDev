@@ -66,7 +66,9 @@ function App() {
           <p className="user-profile">
             {user.username ? (
               <p>
-                <span classname="header-user">Welcome, {user.username}!</span>
+                <span className="header-user">
+                  Welcome, <strong>{user.username}</strong>!
+                </span>
               </p>
             ) : null}
           </p>

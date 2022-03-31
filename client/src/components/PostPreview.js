@@ -32,7 +32,7 @@ function PostPreview({
         <p className="post-stats">
           💬 {comments} comments
           <br />
-          Post created: {date}
+          {date}
         </p>
       </div>
     </div>
