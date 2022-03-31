@@ -76,8 +76,9 @@ img {
 .header {
   display: flex;
   flex-direction: row;
-  background-color: #7699d4;
+  background-image: linear-gradient(-45deg,#57cfb0,#2ab5d3);
 }
+
 
 .header-1-c {
   display: flex;
@@ -137,26 +138,26 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #9448bc;
+  background-color: #dddbde;
   color: white;
   overflow: hidden;
   font-size: 16px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
 }
 
 /* Style the links inside the navigation bar */
 .nav a {
   float: left;
   display: block;
-  color: white;
+  color: #2ab5d3;
   padding: 14px 18px;
   text-decoration: none;
 }
 
 /* Change the color of links on hover */
 .nav a:hover {
-  background-color: #480355;
+  background-color: #2ab5d3;
   color: white;
 }
 
@@ -179,7 +180,7 @@ img {
   padding: 0.5em 0.5em 3em 0.5em;
   width: 100%;
   background-color: rgb(202, 202, 202);
-  box-shadow: 0 0 0 3px darkgray, 1em 1em 3px 0 rgba(0, 0, 0, 0.247);
+  box-shadow: 0 0 0 3px rgba(169, 8, 244, 0.498), 1em 1em 3px 0 rgba(0, 0, 0, 0.247);
   margin-top: 2em;
   border-radius: 10px;
 }
@@ -198,13 +199,30 @@ img {
 }
 
 .create-post-btn {
-  padding: 0.5em 1em 0.5em 1em;
+  /* padding: 0.5em 1em 0.5em 1em;
   background-color: rgb(236, 236, 236);
-  color: black;
+  color: #2ab5d3;
   width: auto;
   border-radius: 5px;
   padding: auto;
-  height: auto;
+  height: auto; */
+
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    fill: #ffffff;
+    color: #ffffff;
+    background-color: #ce43ed;
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 0px 21px 11px -10px rgba(253, 253, 253, 0.2);
+    padding: 25px 40px 25px 40px;
+  
+}
+
+.create-post-btn:hover {
+  background-color: #2ab5d3;
+  color: white;
 }
 
 .h2-bar {
