@@ -10,6 +10,7 @@ import SignUpForm from "./SignupForm";
 
 function App() {
   const [user, setUser] = useState({});
+  const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [filteredReults, setFilteredResults] = useState([]);
 
@@ -70,7 +71,7 @@ function App() {
                   Welcome, <strong>{user.username}</strong>!
                 </p>
                 <p className="user-profile-stats">
-                  Member since: {user.created_at.slice(0, 10)}
+                  Member since: {user.created_at.slice(0, 10)}!
                 </p>
               </span>
             ) : null}
@@ -83,10 +84,20 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Forum search={search} filteredReults={filteredReults} />}
+            element={
+              <Forum
+                search={search}
+                filteredReults={filteredReults}
+                posts={posts}
+                setPosts={setPosts}
+              />
+            }
           ></Route>
           <Route path="posts/:id" element={<Post user={user} />} />
-          <Route path="createpost" element={<CreatePost user={user} />} />
+          <Route
+            path="createpost"
+            element={<CreatePost user={user} setPosts={setPosts} />}
+          />
         </Routes>
       </div>
 
