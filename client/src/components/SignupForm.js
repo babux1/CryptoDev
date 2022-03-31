@@ -83,7 +83,7 @@ function SignUpForm({ onLogin }) {
           placeholder="Avatar URL"
           onChange={(e) => setAvatarURL(e.target.value)}
         />
-        <input className="button" type="submit" value="Enter" />
+        <input className="create-post-btn" type="submit" value="Sign Up" />
       </form>
     </div>
   );
