@@ -43,6 +43,9 @@ function Forum({ search, filteredReults, posts, setPosts }) {
         </Link>
       </div>
       {displayPosts}
+      <Link to={"/createpost"}>
+        <button className="create-post-btn">Create Post</button>
+      </Link>
     </div>
   );
 }

@@ -25,8 +25,7 @@ function CreatePost({ user, setPosts }) {
       .then((resp) => resp.json())
       .then((post) => {
         console.log(post);
-        // setPost(post);
-        setPost((post) => setPost);
+        setPost(post);
       });
     navigate("/");
   }

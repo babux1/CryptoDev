@@ -64,18 +64,20 @@ function App() {
               <button className="login-btn">Signup</button>
             </Link>
           </div>
-          <p className="user-profile">
-            {user.username ? (
+          <span className="user-profile">
+            {user?.username ? (
               <span>
                 <p>
                   Welcome, <strong>{user.username}</strong>!
                 </p>
                 <p className="user-profile-stats">
-                  Member since: {user.created_at.slice(0, 10)}!
+                  Member since: {user.created_at.slice(0, 10)}
                 </p>
               </span>
-            ) : null}
-          </p>
+            ) : (
+              <span></span>
+            )}
+          </span>
         </div>
       </header>
       <Nav />
@@ -103,7 +105,7 @@ function App() {
 
       <div>
         <Routes>
-          <Route path="loginpage" element={<LoginPage />} />
+          <Route path="loginpage" element={<LoginPage setUser={setUser} />} />
           <Route path="signupform" element={<SignUpForm />} />
         </Routes>
       </div>

@@ -29,10 +29,10 @@ function PostPreview({
         </Link>
         {content}
 
-        <p className="post-stats">
+        <p className="post-stats date">
           💬 {comments} comments
           <br />
-          {date}
+          Posted: {date.slice(0, 10)}, at {date.slice(11, 19)}
         </p>
       </div>
     </div>
