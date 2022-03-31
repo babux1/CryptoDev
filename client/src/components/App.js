@@ -11,7 +11,7 @@ import CreatePost from "./CreatePost";
 import SignUpForm from "./SignupForm";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   const [search, setSearch] = useState("");
   const [filteredReults, setFilteredResults] = useState([]);
 
