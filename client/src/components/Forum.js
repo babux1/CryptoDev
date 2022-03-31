@@ -19,13 +19,6 @@ function Forum({ search, filteredReults }) {
       });
   }, []);
 
-  function convertTime(unix) {
-    let time = unix.split("T");
-    let date = time[0];
-    let clock = time[1].split(".");
-    return `Posted: ${date}, at ${clock[0]}`;
-  }
-
   const displayPosts = searchTerms.map((post) => {
     return (
       <PostPreview
@@ -36,7 +29,7 @@ function Forum({ search, filteredReults }) {
         avatarURL={post.avatar_url ? post.avatar_url : post.user?.avatar_url}
         poster={post.poster}
         // date={post.date}
-        date={convertTime(post.date)}
+        date={post.date}
         comments={post.comments}
       />
     );

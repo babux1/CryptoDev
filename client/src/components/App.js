@@ -65,11 +65,14 @@ function App() {
           </div>
           <p className="user-profile">
             {user.username ? (
-              <p>
-                <span className="header-user">
+              <span>
+                <p>
                   Welcome, <strong>{user.username}</strong>!
-                </span>
-              </p>
+                </p>
+                <p className="user-profile-stats">
+                  Member since: {user.created_at.slice(0, 10)}
+                </p>
+              </span>
             ) : null}
           </p>
         </div>

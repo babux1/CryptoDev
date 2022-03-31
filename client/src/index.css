@@ -120,6 +120,11 @@ img {
   margin-top: -0.5em;
 }
 
+.user-profile-stats {
+  font-size: small;
+  margin-top: -1em;
+}
+
 .login {
   display: flex;
   align-items: center;
