@@ -34,6 +34,7 @@ function CreateComment({ post, user }) {
           />
         </label>
         <br />
+        <br />
         <input className="create-post-btn" type="submit" value="Post Comment" />
       </form>
     </div>

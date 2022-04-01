@@ -190,13 +190,24 @@ img {
 }
 
 .forum,
-.post,
-.form {
+.post {
   padding: 0.5em 0.5em 3em 0.5em;
   width: 100%;
   background-color: rgb(202, 202, 202);
   box-shadow: 0 0 0 3px rgba(169, 8, 244, 0.498),
     1em 1em 3px 0 rgba(0, 0, 0, 0.247);
+  margin: auto;
+  margin-top: 2em;
+  border-radius: 10px;
+}
+
+.form {
+  padding: 0.5em 0.5em 3em 0.5em;
+  width: 80%;
+  background-color: rgb(202, 202, 202);
+  box-shadow: 0 0 0 3px rgba(169, 8, 244, 0.498),
+    1em 1em 3px 0 rgba(0, 0, 0, 0.247);
+  margin: auto;
   margin-top: 2em;
   border-radius: 10px;
 }

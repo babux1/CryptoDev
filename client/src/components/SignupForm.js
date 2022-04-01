@@ -68,7 +68,7 @@ function SignUpForm({ onLogin }) {
           type="password"
           id="password"
           value={password}
-          placeholder=""
+          placeholder="Password must be at least 8 characters long..."
           onChange={(e) => setPassword(e.target.value)}
           autoComplete="current-password"
         />
@@ -83,6 +83,7 @@ function SignUpForm({ onLogin }) {
           placeholder="Avatar URL"
           onChange={(e) => setAvatarURL(e.target.value)}
         />
+        <br />
         <input className="create-post-btn" type="submit" value="Sign Up" />
       </form>
     </div>

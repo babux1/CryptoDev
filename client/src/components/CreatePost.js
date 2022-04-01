@@ -19,7 +19,7 @@ function CreatePost({ user, setPosts }) {
         title: title,
         content: text,
         user_id: user.id,
-        forum_id: 1,
+        forum_id: 2,
       }),
     })
       .then((resp) => resp.json())
@@ -31,7 +31,7 @@ function CreatePost({ user, setPosts }) {
   }
 
   return (
-    <div className="form">
+    <div className="post">
       <h3>Create Post</h3>
       <form className="create-post-form" onSubmit={handleCreatePost}>
         <input
@@ -50,7 +50,11 @@ function CreatePost({ user, setPosts }) {
           onChange={(e) => setText(e.target.value)}
           placeholder="Text"
         />
-        <input className="create-post-btn btn-text" type="submit" value="Create Post" />
+        <input
+          className="create-post-btn btn-text"
+          type="submit"
+          value="Create Post"
+        />
       </form>
     </div>
   );

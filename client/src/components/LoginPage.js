@@ -17,10 +17,11 @@ function LoginPage({ onLogin, setUser }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => {
-          onLogin(user);
-          setUser(user);
-        });
+        r.json()
+          .then((user) => {
+            onLogin(user);
+          })
+          .then((user) => setUser(user));
       }
     });
     navigate("/");
@@ -53,7 +54,7 @@ function LoginPage({ onLogin, setUser }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <br></br>
+        <br />
         <input className="create-post-btn" type="submit" value="Enter" />
       </form>
     </div>

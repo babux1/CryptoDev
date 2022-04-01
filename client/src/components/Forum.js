@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import PostPreview from "./PostPreview";
 
 function Forum({ search, filteredReults, posts, setPosts }) {
-  // const [posts, setPosts] = useState([]);
   let searchTerms;
   {
     search === "" ? (searchTerms = posts) : (searchTerms = filteredReults);
@@ -14,7 +13,7 @@ function Forum({ search, filteredReults, posts, setPosts }) {
     fetch("/postpreviews")
       .then((r) => r.json())
       .then((posts) => {
-        // console.log(posts);
+        console.log(posts);
         setPosts(posts);
       });
   }, []);

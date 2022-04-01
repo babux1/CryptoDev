@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function ForumSearch({ search, setSearch, setFilteredResults }) {
-  // const [filteredReults, setFilteredResults] = useState([]);
-
   function searchResults(e) {
     setSearch(e.target.value);
     fetch(`/search?search=${e.target.value}`)
